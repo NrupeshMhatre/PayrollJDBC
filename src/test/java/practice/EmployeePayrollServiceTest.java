@@ -27,4 +27,21 @@ public class EmployeePayrollServiceTest {
 		boolean result = employeePayrollService.updateSalary();
 		Assert.assertTrue(result);
 }
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldUpdateSalaryUsingPreparedStatement()
+			throws EmployeePayrollException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		boolean result = employeePayrollService.updateSalaryPrepared();
+		Assert.assertTrue(result);
+
+	}
+
+	
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldReturnEmployeeDetailsUsingPreparedStatement()
+			throws EmployeePayrollException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		boolean result = employeePayrollService.retrievePrepared("Tersia");
+		Assert.assertTrue(result);
+}
 }
