@@ -43,6 +43,22 @@ public class EmployeePayrollServiceTest {
 
 	}
 
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldReturnEmployeeDetailsUsingPreparedStatement()
+			throws EmployeePayrollException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		boolean result = employeePayrollService.retrievePrepared("Tersia");
+		Assert.assertTrue(result);
+
+	}
+
 	
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldReturnEmployeeDetailsUsingBasedOndate()
+			throws EmployeePayrollException, ClassNotFoundException, SQLException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		employeePayrollService.retrieveDate();
+
+	}
 	
 }
