@@ -16,17 +16,24 @@ public class EmployeePayrollServiceTest {
 		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
 		employeePayrollService.checkDatabaseConnection();
 	}
+
+	
 	@Test
 	public void givenEmployeePayrollDatabase_ShouldRetrieveData() throws ClassNotFoundException, SQLException {
 		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
 		employeePayrollService.selectData();
 	}
+
+	
 	@Test
 	public void givenEmployeePayrollDatabase_ShouldUpdateSalary() throws EmployeePayrollException {
 		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
 		boolean result = employeePayrollService.updateSalary();
 		Assert.assertTrue(result);
-}
+
+	}
+
+	
 	@Test
 	public void givenEmployeePayrollDatabase_ShouldUpdateSalaryUsingPreparedStatement()
 			throws EmployeePayrollException {
@@ -37,11 +44,5 @@ public class EmployeePayrollServiceTest {
 	}
 
 	
-	@Test
-	public void givenEmployeePayrollDatabase_ShouldReturnEmployeeDetailsUsingPreparedStatement()
-			throws EmployeePayrollException {
-		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
-		boolean result = employeePayrollService.retrievePrepared("Tersia");
-		Assert.assertTrue(result);
-}
+	
 }

@@ -29,7 +29,6 @@ public class EmployeePayrollData {
 	}
 
 	
-	
 	public void setId(int id) {
 		this.id = id;
 	}

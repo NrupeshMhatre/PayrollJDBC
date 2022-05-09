@@ -6,5 +6,4 @@ public class EmployeePayrollException extends Exception {
 	public EmployeePayrollException(String message) {
 		this.message = message;
 	}
-	
 }

@@ -73,15 +73,14 @@ public class EmployeePayrollService {
 		return success;
 	}
 	
-	public boolean updateSalaryPrepared() throws EmployeePayrollException {
-
+      public boolean updateSalaryPrepared() throws EmployeePayrollException {
+		
 		Connection connection;
 		boolean success = false;
 		try {
 			connection = getConnection();
 			Statement statement = (Statement) connection.createStatement();
-			PreparedStatement preparedStatement = connection
-					.prepareStatement("update employee_payroll set salary=? where name=?");
+			PreparedStatement preparedStatement = connection.prepareStatement("update employee_payroll set salary=? where name=?");
 			preparedStatement.setDouble(1, 300000);
 			preparedStatement.setString(2, "Tersia");
 			success = true;
@@ -92,27 +91,9 @@ public class EmployeePayrollService {
 		}
 
 		return success;
-
+		
 	}
 
 	
-	public boolean retrievePrepared(String name) throws EmployeePayrollException {
-		Connection connection;
-		boolean success = false;
-		try {
-			connection = getConnection();
-			Statement statement = (Statement) connection.createStatement();
-			PreparedStatement preparedStatement = connection
-					.prepareStatement("select * from employee_payroll where name=?");
-			preparedStatement.setString(1, name);
-			success = true;
-		} catch (ClassNotFoundException e) {
-			throw new EmployeePayrollException("class not found");
-		} catch (SQLException e) {
-			throw new EmployeePayrollException("sql exception");
-		}
-
-		return success;
-
-	}
+	
 }
