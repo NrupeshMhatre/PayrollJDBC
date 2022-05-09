@@ -60,5 +60,48 @@ public class EmployeePayrollServiceTest {
 		employeePayrollService.retrieveDate();
 
 	}
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldReturnSumofEmployeeSalary()
+			throws EmployeePayrollException, ClassNotFoundException, SQLException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		employeePayrollService.retrieveSum();
+
+	}
+	
+		@Test
+	public void givenEmployeePayrollDatabase_ShouldReturnAverageofEmployeeSalary()
+			throws EmployeePayrollException, ClassNotFoundException, SQLException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		employeePayrollService.retrieveAverage();
+
+	}
+	
+	
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldReturnMinofEmployeeSalary()
+			throws EmployeePayrollException, ClassNotFoundException, SQLException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		employeePayrollService.retrieveMinimum();
+
+	}
+	
+	
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldReturnMaxofEmployeeSalary()
+			throws EmployeePayrollException, ClassNotFoundException, SQLException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		employeePayrollService.retrieveMaximum();
+
+	}
+	
+	
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldReturnCountofEmployeeSalary()
+			throws EmployeePayrollException, ClassNotFoundException, SQLException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		employeePayrollService.retrieveCount();
+
+	}
+
 	
 }
