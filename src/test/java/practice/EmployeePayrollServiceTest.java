@@ -6,7 +6,9 @@ import java.sql.SQLException;
 
 import org.junit.Test;
 
+import Practice.EmployeePayrollException;
 import Practice.EmployeePayrollService;
+import junit.framework.Assert;
 
 public class EmployeePayrollServiceTest {
 	@Test
@@ -19,4 +21,10 @@ public class EmployeePayrollServiceTest {
 		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
 		employeePayrollService.selectData();
 	}
+	@Test
+	public void givenEmployeePayrollDatabase_ShouldUpdateSalary() throws EmployeePayrollException {
+		EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+		boolean result = employeePayrollService.updateSalary();
+		Assert.assertTrue(result);
+}
 }

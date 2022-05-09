@@ -16,7 +16,6 @@ public class EmployeePayrollData {
 		this.gender = gender;
 		this.salary = salary;
 	}
-
 	public EmployeePayrollData(int id, String name, String gender, double salary, LocalDate startDate) {
 		super();
 		this.id = id;

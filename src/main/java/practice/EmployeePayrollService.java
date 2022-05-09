@@ -52,4 +52,23 @@ public class EmployeePayrollService {
 		}
 
 	}
+	public boolean updateSalary() throws EmployeePayrollException {
+		Connection connection;
+		boolean success = false;
+		try {
+			connection = getConnection();
+			java.sql.Statement statement = connection.createStatement();
+			int result = statement.executeUpdate("update employee_payroll set salary=300000 where name='Tersia'");
+			if (result > 0) {
+				System.out.println("updated");
+				success = true;
+			}
+		} catch (ClassNotFoundException e) {
+			throw new EmployeePayrollException("class not found");
+		} catch (SQLException e) {
+			throw new EmployeePayrollException("sql exception");
+		}
+
+		return success;
+	}
 }
